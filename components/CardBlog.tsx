@@ -1,12 +1,5 @@
 import { Blog } from "@/interface";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { urlFor } from "@/connection/client";
 import { Button } from "./ui/button";
@@ -31,7 +24,7 @@ function CardBlog({ title, smallDescription, titleImage, currentSlug }: Blog) {
           <p className=" text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
             {smallDescription}
           </p>
-          <Button className=" mt-4 w-full">
+          <Button className=" dark:text-gray-100 font-semibold mt-4 w-full">
             <Link href={`/blog/${currentSlug}`}>Read More</Link>
           </Button>
         </CardContent>

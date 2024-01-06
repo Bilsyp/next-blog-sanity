@@ -23,6 +23,22 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data: Blog = await getData(params.slug);
+  const myPortableTextComponents = {
+    types: {
+      image: ({ value }: any) => {
+        return (
+          <Image
+            priority
+            width={800}
+            height={400}
+            alt="png"
+            className="border"
+            src={urlFor(value.asset._ref).url()}
+          />
+        );
+      },
+    },
+  };
   return (
     <div className="containers">
       <h1>
@@ -36,13 +52,16 @@ export default async function BlogArticle({
       <Image
         src={urlFor(data.titleImage).url()}
         width={800}
-        height={800}
+        height={400}
         alt="titleImage"
         priority
         className="my-8 rounded-md border"
       />
-      <div className="my-10 prose-blue prose-xl  porse-p:text-[0.89rem] lg:prose-p:text-xl dark:prose-invert">
-        <PortableText value={data.content} />
+      <div className="my-10 prose-blue prose-xl  porse-p:text-[0.89rem] lg:prose-p:text-xl dark:prose-invert  prose-a:underline  prose-a:text-blue-600">
+        <PortableText
+          components={myPortableTextComponents}
+          value={data.content}
+        />
       </div>
     </div>
   );
