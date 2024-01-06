@@ -4,7 +4,7 @@ import { client } from "@/connection/client";
 
 export const revalidate = 30;
 
-export async function getData() {
+async function getData() {
   try {
     const query = `
     *[_type == "blog" ] | order(releaseDate desc) | order(_createdAt asc){
