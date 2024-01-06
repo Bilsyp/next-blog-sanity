@@ -1,5 +1,5 @@
 import { Blog } from "@/interface";
-import { client, urlFor } from "@/sanity/connection/client";
+import { client, urlFor } from "@/connection/client";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 

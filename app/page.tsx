@@ -1,6 +1,6 @@
 import CardBlog from "@/components/CardBlog";
 import { Blog } from "@/interface";
-import { client } from "@/sanity/connection/client";
+import { client } from "@/connection/client";
 
 export const revalidate = 30;
 

@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import { urlFor } from "@/sanity/connection/client";
+import { urlFor } from "@/connection/client";
 import { Button } from "./ui/button";
 import Link from "next/link";
 function CardBlog({ title, smallDescription, titleImage, currentSlug }: Blog) {
